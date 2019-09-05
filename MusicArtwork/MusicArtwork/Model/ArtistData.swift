@@ -15,3 +15,10 @@ struct ArtistData: Decodable {
 struct Album: Decodable {
     var strAlbumThumb : String = ""
 }
+
+enum RequestStatus {
+    case none
+    case fetching
+    case success
+    case failure
+}

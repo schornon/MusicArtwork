@@ -22,29 +22,32 @@ class NetworkManager {
     func fetchData(request: String) {
         
         let array = separeteArtistFromAlbum(string: request)
-        guard array.count > 1 else { print("array.count <= 1"); return }
+        guard array.count > 1 else { self.mainViewModel.requestStatus.value = .failure; return }
+        print(array)
         
         let urlString = "\(base)s=\(array[0])&a=\(array[1])"
         
-        guard let url = URL(string: urlString) else { return }
+        guard let url = URL(string: urlString) else { self.mainViewModel.requestStatus.value = .failure; return }
         print(url)
         
         Alamofire.request(url).responseJSON { (response) in
             print("Alamofire")
             
-            guard let data = response.data else { print("guard response.data error"); return }
+            guard let data = response.data else { self.mainViewModel.requestStatus.value = .failure; return }
             print(data)
             
             do {
                 let parsedResult = try JSONDecoder().decode(ArtistData.self, from: data)
                 if parsedResult.album.isEmpty {
                     print("parsedResult.album.isEmpty")
+                    self.mainViewModel.requestStatus.value = .failure
                 } else {
                     self.mainViewModel.artistData.value = parsedResult
                 }
                 
             } catch let error {
                 print(error)
+                self.mainViewModel.requestStatus.value = .failure
             }
         }
     }
@@ -70,7 +73,11 @@ class NetworkManager {
         var result = [String]()
         for s in array {
             let trimmedString = String(s.trimmingCharacters(in: .whitespacesAndNewlines))
-            result.append(trimmedString)
+            guard let trimmedUrlString = trimmedString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+                return [String]()
+            }
+            
+            result.append(trimmedUrlString)
         }
         return result
     }
@@ -78,6 +85,7 @@ class NetworkManager {
     func fetchImage(urlString: String, closure: @escaping ()->()) {
         guard let url = URL(string: urlString) else {
             print("guard url fetching image error")
+            self.mainViewModel.requestStatus.value = .failure
             return
         }
         
@@ -89,8 +97,11 @@ class NetworkManager {
                     DispatchQueue.main.async {
                         closure()
                     }
+                } else {
+                    self.mainViewModel.requestStatus.value = .failure
                 }
             } catch let error {
+                self.mainViewModel.requestStatus.value = .failure
                 print(error)
             }
         }

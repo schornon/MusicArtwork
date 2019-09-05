@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     var mainViewModel = MainViewModel()
     
@@ -24,16 +25,34 @@ class MainViewController: UIViewController {
     
     private func setupBinging() {
         
-        mainViewModel.artistData.bind {
+        mainViewModel.artistData.bind { [unowned self] in
             if $0.album.count > 0 {
                 let urlString = $0.album[0].strAlbumThumb
                 self.mainViewModel.fetchImage(urlString: urlString) {
                     self.imageView.image = self.mainViewModel.image
+                    self.mainViewModel.requestStatus.value = .success
                 }
+            }
+        }
+        
+        mainViewModel.requestStatus.bind { [unowned self] in
+            switch $0 {
+            case .none:
+                break
+            case .fetching:
+                self.activityView.isHidden = false
+                self.activityView.startAnimating()
+            case .success:
+                self.activityView.isHidden = true
+                self.activityView.stopAnimating()
+            case .failure:
+                self.activityView.isHidden = true
+                self.activityView.stopAnimating()
             }
         }
     }
     private func setupViews() {
+        self.activityView.isHidden = true
         self.imageView.layer.cornerRadius = 3
     }
     
@@ -42,7 +61,7 @@ class MainViewController: UIViewController {
         guard let request = textField.text else { return }
         print("textField = '\(request)'")
         
-        //mainViewModel.saveToCoreDataHistory(request: request)
+        mainViewModel.saveToCoreDataHistory(request: request)
         mainViewModel.fetchData(request: request)
     }
     
@@ -51,5 +70,20 @@ class MainViewController: UIViewController {
         performSegue(withIdentifier: "segueFromMainVCToHistoryVC", sender: self)
     }
     
-    @IBAction func unwindToMainVC(segue: UIStoryboardSegue) {  }
+    @IBAction func unwindToMainVC(segue: UIStoryboardSegue) { }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is HistoryViewController {
+            let historyVC = segue.destination as? HistoryViewController
+            historyVC?.mainViewModel = self.mainViewModel
+        }
+    }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.destination is HistoryViewController {
+//            let vc = segue.destination as? HistoryViewController
+//            vc?.mainViewModel = self
+//        }
+//    }
 }

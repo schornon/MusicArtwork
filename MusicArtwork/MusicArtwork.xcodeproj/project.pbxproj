@@ -19,6 +19,8 @@
 		A97642ED232176310054DD51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97642EC232176310054DD51 /* NetworkManager.swift */; };
 		A97642F123218E280054DD51 /* ArtistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97642F023218E280054DD51 /* ArtistData.swift */; };
 		A97642F3232195590054DD51 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97642F2232195590054DD51 /* HistoryViewController.swift */; };
+		A97642F523219C6F0054DD51 /* Ext-HistoryVC+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97642F423219C6F0054DD51 /* Ext-HistoryVC+UITableView.swift */; };
+		A97642F723219E4C0054DD51 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97642F623219E4C0054DD51 /* HistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		A97642EC232176310054DD51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A97642F023218E280054DD51 /* ArtistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistData.swift; sourceTree = "<group>"; };
 		A97642F2232195590054DD51 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		A97642F423219C6F0054DD51 /* Ext-HistoryVC+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext-HistoryVC+UITableView.swift"; sourceTree = "<group>"; };
+		A97642F623219E4C0054DD51 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		EEBA545990B5F645B9CCE549 /* Pods-MusicArtwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicArtwork.release.xcconfig"; path = "Target Support Files/Pods-MusicArtwork/Pods-MusicArtwork.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +112,8 @@
 			children = (
 				A97642E623216B300054DD51 /* MainViewController.swift */,
 				A97642F2232195590054DD51 /* HistoryViewController.swift */,
+				A97642F423219C6F0054DD51 /* Ext-HistoryVC+UITableView.swift */,
+				A97642F623219E4C0054DD51 /* HistoryTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 				A97642F123218E280054DD51 /* ArtistData.swift in Sources */,
 				A97642E723216B300054DD51 /* MainViewController.swift in Sources */,
 				A97642D423216A750054DD51 /* MusicArtwork.xcdatamodeld in Sources */,
+				A97642F723219E4C0054DD51 /* HistoryTableViewCell.swift in Sources */,
 				A97642CC23216A750054DD51 /* AppDelegate.swift in Sources */,
+				A97642F523219C6F0054DD51 /* Ext-HistoryVC+UITableView.swift in Sources */,
 				A97642E923216B400054DD51 /* MainViewModel.swift in Sources */,
 				A97642EB23216B540054DD51 /* Box.swift in Sources */,
 				A97642F3232195590054DD51 /* HistoryViewController.swift in Sources */,

@@ -20,6 +20,7 @@ class MainViewModel {
     var history = [CoreDataHistory]()
     var artistData : Box<ArtistData> = Box(ArtistData())
     var image : UIImage? = nil
+    var requestStatus : Box<RequestStatus> = Box(RequestStatus.none)
     
     init() {
         self.appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -30,6 +31,7 @@ class MainViewModel {
     }
     
     func fetchData(request: String) {
+        self.requestStatus.value = .fetching
         self.networkManager.fetchData(request: request)
     }
     
@@ -86,6 +88,7 @@ class MainViewModel {
                 let managedObjectData : NSManagedObject = manObj as! NSManagedObject
                 managedContext.delete(managedObjectData)
             }
+            history.removeAll()
             try managedContext.save()
         } catch let error {
             print(error)

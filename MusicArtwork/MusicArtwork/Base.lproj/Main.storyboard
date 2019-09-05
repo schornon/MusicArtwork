@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Album Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RaD-ws-6Rr">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Artist and Album" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RaD-ws-6Rr">
                                 <rect key="frame" x="83" y="578" width="248" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -44,23 +44,38 @@
                                     <action selector="historyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IGk-wD-Gwi"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1Il-vC-FVh">
+                                <rect key="frame" x="306" y="583" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e.g. The Beatles - Abbey Road" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDx-Go-ULD">
+                                <rect key="frame" x="83" y="609" width="243" height="8.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RaD-ws-6Rr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="6/10" id="6Cg-gt-z9Y"/>
+                            <constraint firstItem="VDx-Go-ULD" firstAttribute="top" secondItem="RaD-ws-6Rr" secondAttribute="bottom" constant="1" id="Bhs-Yv-uZU"/>
                             <constraint firstItem="6z4-ch-lEE" firstAttribute="top" secondItem="RaD-ws-6Rr" secondAttribute="bottom" constant="10" id="E7Y-lk-ZDX"/>
+                            <constraint firstItem="VDx-Go-ULD" firstAttribute="trailing" secondItem="RaD-ws-6Rr" secondAttribute="trailing" constant="-5" id="GJ5-FR-QXt"/>
                             <constraint firstItem="RaD-ws-6Rr" firstAttribute="top" secondItem="LQS-cv-k5R" secondAttribute="bottom" constant="20" id="NQL-Oi-Fk4"/>
+                            <constraint firstItem="VDx-Go-ULD" firstAttribute="leading" secondItem="RaD-ws-6Rr" secondAttribute="leading" id="QKi-L5-wZM"/>
                             <constraint firstItem="LQS-cv-k5R" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QUT-fT-MPp"/>
                             <constraint firstItem="LQS-cv-k5R" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="Ruf-74-KQ1"/>
                             <constraint firstItem="tKR-Rp-6YY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="S6O-Mh-T8x"/>
                             <constraint firstItem="RaD-ws-6Rr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SpC-JT-BfD"/>
                             <constraint firstItem="LQS-cv-k5R" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="7/10" id="USh-3K-NxB"/>
+                            <constraint firstItem="1Il-vC-FVh" firstAttribute="leading" secondItem="RaD-ws-6Rr" secondAttribute="trailing" constant="-25" id="YnQ-uh-0gK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tKR-Rp-6YY" secondAttribute="trailing" constant="20" id="cUu-zC-Z9F"/>
                             <constraint firstItem="6z4-ch-lEE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wbp-6l-eVE"/>
+                            <constraint firstItem="1Il-vC-FVh" firstAttribute="centerY" secondItem="RaD-ws-6Rr" secondAttribute="centerY" id="xZw-w8-09q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityView" destination="1Il-vC-FVh" id="AEm-to-Pjm"/>
                         <outlet property="imageView" destination="LQS-cv-k5R" id="BSw-sW-CdF"/>
                         <outlet property="textField" destination="RaD-ws-6Rr" id="H34-fT-g5l"/>
                         <segue destination="Krl-jF-9Cz" kind="show" identifier="segueFromMainVCToHistoryVC" id="VtX-z8-5Jp"/>
@@ -68,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96" y="138"/>
+            <point key="canvasLocation" x="95.652173913043484" y="137.94642857142856"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="P8E-SA-tr0">
@@ -87,12 +102,44 @@
                                                 <action selector="backButtonPressed:" destination="Krl-jF-9Cz" id="ldk-ti-Xqc"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="1HA-Xd-4sM">
+                                            <connections>
+                                                <action selector="trashButtonPressed:" destination="Krl-jF-9Cz" id="3DM-91-hvz"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1dm-TD-452">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyTableViewCell" id="UGO-s8-Nxn" customClass="HistoryTableViewCell" customModule="MusicArtwork" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UGO-s8-Nxn" id="XUY-03-YZq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4S9-tK-qFU">
+                                                    <rect key="frame" x="20" y="11" width="374" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4S9-tK-qFU" secondAttribute="trailing" id="Nxu-qr-K2h"/>
+                                                <constraint firstItem="4S9-tK-qFU" firstAttribute="top" secondItem="XUY-03-YZq" secondAttribute="topMargin" id="QNE-rO-AH6"/>
+                                                <constraint firstItem="4S9-tK-qFU" firstAttribute="leading" secondItem="XUY-03-YZq" secondAttribute="leadingMargin" id="jKq-Vp-itZ"/>
+                                                <constraint firstItem="4S9-tK-qFU" firstAttribute="bottom" secondItem="XUY-03-YZq" secondAttribute="bottomMargin" id="yda-NR-qvT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="requestLabel" destination="4S9-tK-qFU" id="PdL-Rx-4YX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
