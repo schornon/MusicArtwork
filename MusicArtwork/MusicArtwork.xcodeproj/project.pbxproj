@@ -18,6 +18,7 @@
 		A97642EB23216B540054DD51 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97642EA23216B540054DD51 /* Box.swift */; };
 		A97642ED232176310054DD51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97642EC232176310054DD51 /* NetworkManager.swift */; };
 		A97642F123218E280054DD51 /* ArtistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97642F023218E280054DD51 /* ArtistData.swift */; };
+		A97642F3232195590054DD51 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97642F2232195590054DD51 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		A97642EA23216B540054DD51 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		A97642EC232176310054DD51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A97642F023218E280054DD51 /* ArtistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistData.swift; sourceTree = "<group>"; };
+		A97642F2232195590054DD51 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		EEBA545990B5F645B9CCE549 /* Pods-MusicArtwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicArtwork.release.xcconfig"; path = "Target Support Files/Pods-MusicArtwork/Pods-MusicArtwork.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				A97642E623216B300054DD51 /* MainViewController.swift */,
+				A97642F2232195590054DD51 /* HistoryViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				A97642CC23216A750054DD51 /* AppDelegate.swift in Sources */,
 				A97642E923216B400054DD51 /* MainViewModel.swift in Sources */,
 				A97642EB23216B540054DD51 /* Box.swift in Sources */,
+				A97642F3232195590054DD51 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

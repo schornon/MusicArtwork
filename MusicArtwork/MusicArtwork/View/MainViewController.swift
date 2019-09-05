@@ -47,6 +47,9 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func historyButtonPressed(_ sender: UIButton) {
-        mainViewModel.deleteAllData(entity: "CoreDataHistory")
+        //mainViewModel.deleteAllData(entity: "CoreDataHistory")
+        performSegue(withIdentifier: "segueFromMainVCToHistoryVC", sender: self)
     }
+    
+    @IBAction func unwindToMainVC(segue: UIStoryboardSegue) {  }
 }

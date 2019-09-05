@@ -19,20 +19,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Album Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RaD-ws-6Rr">
-                                <rect key="frame" x="83" y="618" width="248" height="30"/>
+                                <rect key="frame" x="83" y="578" width="248" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6z4-ch-lEE">
-                                <rect key="frame" x="183" y="658" width="48" height="30"/>
+                                <rect key="frame" x="183" y="618" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Hr-Js-unv"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LQS-cv-k5R">
-                                <rect key="frame" x="62" y="308" width="290" height="290"/>
+                                <rect key="frame" x="62" y="268" width="290" height="290"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LQS-cv-k5R" secondAttribute="height" id="yul-Po-EcZ"/>
                                 </constraints>
@@ -51,7 +51,7 @@
                             <constraint firstItem="6z4-ch-lEE" firstAttribute="top" secondItem="RaD-ws-6Rr" secondAttribute="bottom" constant="10" id="E7Y-lk-ZDX"/>
                             <constraint firstItem="RaD-ws-6Rr" firstAttribute="top" secondItem="LQS-cv-k5R" secondAttribute="bottom" constant="20" id="NQL-Oi-Fk4"/>
                             <constraint firstItem="LQS-cv-k5R" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QUT-fT-MPp"/>
-                            <constraint firstItem="LQS-cv-k5R" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Ruf-74-KQ1"/>
+                            <constraint firstItem="LQS-cv-k5R" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="Ruf-74-KQ1"/>
                             <constraint firstItem="tKR-Rp-6YY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="S6O-Mh-T8x"/>
                             <constraint firstItem="RaD-ws-6Rr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SpC-JT-BfD"/>
                             <constraint firstItem="LQS-cv-k5R" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="7/10" id="USh-3K-NxB"/>
@@ -63,10 +63,59 @@
                     <connections>
                         <outlet property="imageView" destination="LQS-cv-k5R" id="BSw-sW-CdF"/>
                         <outlet property="textField" destination="RaD-ws-6Rr" id="H34-fT-g5l"/>
+                        <segue destination="Krl-jF-9Cz" kind="show" identifier="segueFromMainVCToHistoryVC" id="VtX-z8-5Jp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="96" y="138"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="P8E-SA-tr0">
+            <objects>
+                <viewController id="Krl-jF-9Cz" customClass="HistoryViewController" customModule="MusicArtwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nq5-sI-gkj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xX-ol-YTg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="History" id="9is-jg-gLN">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="stop" id="ICO-oU-R5J">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="Krl-jF-9Cz" id="ldk-ti-Xqc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1dm-TD-452">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vln-tO-5Xo" firstAttribute="bottom" secondItem="1dm-TD-452" secondAttribute="bottom" id="4Wc-Kn-1j0"/>
+                            <constraint firstItem="5xX-ol-YTg" firstAttribute="leading" secondItem="vln-tO-5Xo" secondAttribute="leading" id="NvX-4W-g46"/>
+                            <constraint firstItem="vln-tO-5Xo" firstAttribute="trailing" secondItem="1dm-TD-452" secondAttribute="trailing" id="OeQ-mY-t6j"/>
+                            <constraint firstItem="1dm-TD-452" firstAttribute="leading" secondItem="vln-tO-5Xo" secondAttribute="leading" id="QiR-tx-cBh"/>
+                            <constraint firstItem="5xX-ol-YTg" firstAttribute="trailing" secondItem="vln-tO-5Xo" secondAttribute="trailing" id="Yif-SI-aog"/>
+                            <constraint firstItem="1dm-TD-452" firstAttribute="top" secondItem="5xX-ol-YTg" secondAttribute="bottom" id="hSg-ZS-QmM"/>
+                            <constraint firstItem="5xX-ol-YTg" firstAttribute="top" secondItem="nq5-sI-gkj" secondAttribute="topMargin" id="vsm-vN-oCs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vln-tO-5Xo"/>
+                    </view>
+                    <connections>
+                        <outlet property="historyTableView" destination="1dm-TD-452" id="6sk-Qy-kH7"/>
+                        <segue destination="Cfy-hC-EVc" kind="unwind" identifier="unwindSegueToMainVC" unwindAction="unwindToMainVCWithSegue:" id="4eO-0a-Qyv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWM-Rg-FpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Cfy-hC-EVc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="910" y="138"/>
         </scene>
     </scenes>
 </document>
