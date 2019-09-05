@@ -13,12 +13,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
     
-    
+    var mainViewModel = MainViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
