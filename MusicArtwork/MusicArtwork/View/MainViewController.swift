@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  MusicArtwork
 //
 //  Created by Serhii CHORNONOH on 9/5/19.
@@ -8,13 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+    }
+    
 }
-
