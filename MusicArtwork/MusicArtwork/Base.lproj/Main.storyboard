@@ -19,37 +19,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Artist and Album" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RaD-ws-6Rr">
-                                <rect key="frame" x="83" y="578" width="248" height="30"/>
+                                <rect key="frame" x="83" y="434" width="248" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6z4-ch-lEE">
-                                <rect key="frame" x="183" y="618" width="48" height="30"/>
+                                <rect key="frame" x="177.5" y="474" width="59" height="32"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Hr-Js-unv"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LQS-cv-k5R">
-                                <rect key="frame" x="62" y="268" width="290" height="290"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album" translatesAutoresizingMaskIntoConstraints="NO" id="LQS-cv-k5R">
+                                <rect key="frame" x="62" y="124" width="290" height="290"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LQS-cv-k5R" secondAttribute="height" id="yul-Po-EcZ"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKR-Rp-6YY">
-                                <rect key="frame" x="344" y="44" width="50" height="30"/>
+                                <rect key="frame" x="334" y="49" width="60" height="32"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <state key="normal" title="History"/>
                                 <connections>
                                     <action selector="historyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IGk-wD-Gwi"/>
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1Il-vC-FVh">
-                                <rect key="frame" x="306" y="583" width="20" height="20"/>
+                                <rect key="frame" x="306" y="439" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e.g. The Beatles - Abbey Road" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDx-Go-ULD">
-                                <rect key="frame" x="83" y="609" width="243" height="8.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                                <rect key="frame" x="83" y="465" width="243" height="8"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="7"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -63,10 +65,10 @@
                             <constraint firstItem="RaD-ws-6Rr" firstAttribute="top" secondItem="LQS-cv-k5R" secondAttribute="bottom" constant="20" id="NQL-Oi-Fk4"/>
                             <constraint firstItem="VDx-Go-ULD" firstAttribute="leading" secondItem="RaD-ws-6Rr" secondAttribute="leading" id="QKi-L5-wZM"/>
                             <constraint firstItem="LQS-cv-k5R" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QUT-fT-MPp"/>
-                            <constraint firstItem="LQS-cv-k5R" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="Ruf-74-KQ1"/>
-                            <constraint firstItem="tKR-Rp-6YY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="S6O-Mh-T8x"/>
+                            <constraint firstItem="tKR-Rp-6YY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="S6O-Mh-T8x"/>
                             <constraint firstItem="RaD-ws-6Rr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SpC-JT-BfD"/>
                             <constraint firstItem="LQS-cv-k5R" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="7/10" id="USh-3K-NxB"/>
+                            <constraint firstItem="LQS-cv-k5R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="XAP-Fh-TjF"/>
                             <constraint firstItem="1Il-vC-FVh" firstAttribute="leading" secondItem="RaD-ws-6Rr" secondAttribute="trailing" constant="-25" id="YnQ-uh-0gK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tKR-Rp-6YY" secondAttribute="trailing" constant="20" id="cUu-zC-Z9F"/>
                             <constraint firstItem="6z4-ch-lEE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wbp-6l-eVE"/>
@@ -123,7 +125,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4S9-tK-qFU">
                                                     <rect key="frame" x="20" y="11" width="374" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -165,4 +167,7 @@
             <point key="canvasLocation" x="910" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="album" width="256" height="256"/>
+    </resources>
 </document>
