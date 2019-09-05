@@ -14,16 +14,30 @@ class MainViewModel {
     
     private var appDelegate: AppDelegate!
     private var managedContext: NSManagedObjectContext!
+    var networkManager : NetworkManager!
     
     var managedObject = [NSManagedObject]()
     var history = [CoreDataHistory]()
+    var artistData : Box<ArtistData> = Box(ArtistData())
+    var image : UIImage? = nil
     
     init() {
         self.appDelegate = UIApplication.shared.delegate as? AppDelegate
         self.managedContext = appDelegate.persistentContainer.viewContext
+        self.networkManager = NetworkManager(mainViewModel: self)
         
         fetchHistoryFromCoreData()
     }
+    
+    func fetchData(request: String) {
+        self.networkManager.fetchData(request: request)
+    }
+    
+    func fetchImage(urlString: String, closure: @escaping ()->()) {
+        self.networkManager.fetchImage(urlString: urlString, closure: closure)
+    }
+    
+    
     
     func saveToCoreDataHistory(request: String) {
         

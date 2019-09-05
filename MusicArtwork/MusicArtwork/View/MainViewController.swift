@@ -18,8 +18,23 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupViews()
+        setupBinging()
+    }
+    
+    private func setupBinging() {
         
-        
+        mainViewModel.artistData.bind {
+            if $0.album.count > 0 {
+                let urlString = $0.album[0].strAlbumThumb
+                self.mainViewModel.fetchImage(urlString: urlString) {
+                    self.imageView.image = self.mainViewModel.image
+                }
+            }
+        }
+    }
+    private func setupViews() {
+        self.imageView.layer.cornerRadius = 3
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
@@ -27,7 +42,8 @@ class MainViewController: UIViewController {
         guard let request = textField.text else { return }
         print("textField = '\(request)'")
         
-        mainViewModel.saveToCoreDataHistory(request: request)
+        //mainViewModel.saveToCoreDataHistory(request: request)
+        mainViewModel.fetchData(request: request)
     }
     
     @IBAction func historyButtonPressed(_ sender: UIButton) {
