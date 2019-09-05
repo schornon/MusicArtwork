@@ -23,6 +23,14 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
+        guard textField.text?.isEmpty == false else { return }
+        guard let request = textField.text else { return }
+        print("textField = '\(request)'")
+        
+        mainViewModel.saveToCoreDataHistory(request: request)
     }
     
+    @IBAction func historyButtonPressed(_ sender: UIButton) {
+        mainViewModel.deleteAllData(entity: "CoreDataHistory")
+    }
 }

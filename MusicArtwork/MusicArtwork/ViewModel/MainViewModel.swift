@@ -35,6 +35,8 @@ class MainViewModel {
         do {
             try managedContext.save()
             managedObject.append(data)
+            history.append(data)
+            print("docatch ok")
         } catch let error {
             print(error)
         }
@@ -54,7 +56,10 @@ class MainViewModel {
         for item in managedObject {
             history.append(item as! CoreDataHistory)
         }
-        print("fetchHistoryFromCoreData - history: \(history)")
+        print("fetchHistoryFromCoreData - history:")
+        for h in history {
+            print(h.request)
+        }
     }
     
     func deleteAllData(entity: String) {
