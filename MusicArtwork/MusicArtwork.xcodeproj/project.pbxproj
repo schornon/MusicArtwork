@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45506DC02322340A00132DA6 /* Ext-UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45506DBF2322340A00132DA6 /* Ext-UIView.swift */; };
 		7BFB2A05B5051317EE7D8DFC /* Pods_MusicArtwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2788B89AB21E3B82C210A6 /* Pods_MusicArtwork.framework */; };
 		A97642CC23216A750054DD51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97642CB23216A750054DD51 /* AppDelegate.swift */; };
 		A97642D123216A750054DD51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A97642CF23216A750054DD51 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45506DBF2322340A00132DA6 /* Ext-UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext-UIView.swift"; sourceTree = "<group>"; };
 		7464C865EAD28E06E6FE7A7D /* Pods-MusicArtwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicArtwork.debug.xcconfig"; path = "Target Support Files/Pods-MusicArtwork/Pods-MusicArtwork.debug.xcconfig"; sourceTree = "<group>"; };
 		9A2788B89AB21E3B82C210A6 /* Pods_MusicArtwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicArtwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97642C823216A750054DD51 /* MusicArtwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicArtwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,7 @@
 				A97642F2232195590054DD51 /* HistoryViewController.swift */,
 				A97642F423219C6F0054DD51 /* Ext-HistoryVC+UITableView.swift */,
 				A97642F623219E4C0054DD51 /* HistoryTableViewCell.swift */,
+				45506DBF2322340A00132DA6 /* Ext-UIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				A97642ED232176310054DD51 /* NetworkManager.swift in Sources */,
 				A97642F123218E280054DD51 /* ArtistData.swift in Sources */,
 				A97642E723216B300054DD51 /* MainViewController.swift in Sources */,
+				45506DC02322340A00132DA6 /* Ext-UIView.swift in Sources */,
 				A97642D423216A750054DD51 /* MusicArtwork.xcdatamodeld in Sources */,
 				A97642F723219E4C0054DD51 /* HistoryTableViewCell.swift in Sources */,
 				A97642CC23216A750054DD51 /* AppDelegate.swift in Sources */,

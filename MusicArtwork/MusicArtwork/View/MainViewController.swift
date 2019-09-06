@@ -48,6 +48,7 @@ class MainViewController: UIViewController {
             case .failure:
                 self.activityView.isHidden = true
                 self.activityView.stopAnimating()
+                self.textField.shake()
             }
         }
     }
@@ -79,11 +80,4 @@ class MainViewController: UIViewController {
         }
     }
     
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.destination is HistoryViewController {
-//            let vc = segue.destination as? HistoryViewController
-//            vc?.mainViewModel = self
-//        }
-//    }
 }
