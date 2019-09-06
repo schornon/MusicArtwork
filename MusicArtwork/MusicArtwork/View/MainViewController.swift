@@ -42,13 +42,16 @@ class MainViewController: UIViewController {
             case .fetching:
                 self.activityView.isHidden = false
                 self.activityView.startAnimating()
+                self.imageView.alpha = 0.4
             case .success:
                 self.activityView.isHidden = true
                 self.activityView.stopAnimating()
+                self.imageView.alpha = 1.0
             case .failure:
                 self.activityView.isHidden = true
                 self.activityView.stopAnimating()
                 self.textField.shake()
+                self.imageView.alpha = 1.0
             }
         }
     }

@@ -46,21 +46,22 @@
                                     <action selector="historyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IGk-wD-Gwi"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1Il-vC-FVh">
-                                <rect key="frame" x="306" y="439" width="20" height="20"/>
-                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e.g. The Beatles - Abbey Road" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDx-Go-ULD">
                                 <rect key="frame" x="83" y="465" width="243" height="8"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="7"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1Il-vC-FVh">
+                                <rect key="frame" x="197" y="259" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RaD-ws-6Rr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="6/10" id="6Cg-gt-z9Y"/>
                             <constraint firstItem="VDx-Go-ULD" firstAttribute="top" secondItem="RaD-ws-6Rr" secondAttribute="bottom" constant="1" id="Bhs-Yv-uZU"/>
                             <constraint firstItem="6z4-ch-lEE" firstAttribute="top" secondItem="RaD-ws-6Rr" secondAttribute="bottom" constant="10" id="E7Y-lk-ZDX"/>
+                            <constraint firstItem="1Il-vC-FVh" firstAttribute="centerX" secondItem="LQS-cv-k5R" secondAttribute="centerX" id="GDu-Dv-eu1"/>
                             <constraint firstItem="VDx-Go-ULD" firstAttribute="trailing" secondItem="RaD-ws-6Rr" secondAttribute="trailing" constant="-5" id="GJ5-FR-QXt"/>
                             <constraint firstItem="RaD-ws-6Rr" firstAttribute="top" secondItem="LQS-cv-k5R" secondAttribute="bottom" constant="20" id="NQL-Oi-Fk4"/>
                             <constraint firstItem="VDx-Go-ULD" firstAttribute="leading" secondItem="RaD-ws-6Rr" secondAttribute="leading" id="QKi-L5-wZM"/>
@@ -69,10 +70,9 @@
                             <constraint firstItem="RaD-ws-6Rr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SpC-JT-BfD"/>
                             <constraint firstItem="LQS-cv-k5R" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="7/10" id="USh-3K-NxB"/>
                             <constraint firstItem="LQS-cv-k5R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="XAP-Fh-TjF"/>
-                            <constraint firstItem="1Il-vC-FVh" firstAttribute="leading" secondItem="RaD-ws-6Rr" secondAttribute="trailing" constant="-25" id="YnQ-uh-0gK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tKR-Rp-6YY" secondAttribute="trailing" constant="20" id="cUu-zC-Z9F"/>
+                            <constraint firstItem="1Il-vC-FVh" firstAttribute="centerY" secondItem="LQS-cv-k5R" secondAttribute="centerY" id="qSf-fG-hbs"/>
                             <constraint firstItem="6z4-ch-lEE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wbp-6l-eVE"/>
-                            <constraint firstItem="1Il-vC-FVh" firstAttribute="centerY" secondItem="RaD-ws-6Rr" secondAttribute="centerY" id="xZw-w8-09q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
